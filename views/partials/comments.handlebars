@@ -1,0 +1,14 @@
+{{#each this}}
+<section class="container-flid bg-light m-2">
+    <div class="row align-items-center">
+        <div class="col-1">
+            <div class="">
+                <p>{{user.username}} on {{formate_date created_at}}</p>
+            </div>
+            <div class="">
+                <p>{{comment_text}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{/each}}

@@ -1,0 +1,26 @@
+<article class="row border border-2 rounded">
+    <div class="d-flex gap-1 bg-info justify-content-center">
+        <a href="/post/{{post.id}}" class="text-decoration-none text-white fs-1">{{post.title}}</a>
+    </div>
+    <div class="d-flex gap-1 bg-info justify-content-center">
+        <p class="">by: {{post.user.username}}</p>
+        <p class="">{{formate_date post.created_at}}</p>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p class="">{{post.content}}</p>
+    </div>
+</article>
+
+<form class="">
+    <div class="d-flex justify-content-center">
+        <textarea name="" id="" cols="50" rows="3" class=""></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit">add comment</button>
+    </div>
+</form>
+
+
+<div class="d-flex justify-content-center">
+    {{> comments post.comments}}
+</div>
