@@ -39,7 +39,10 @@ router.get('/', (req, res) => {
             //how to preview a single post
             // res.render('homepage', dbPostData[0].get({ plain: true }));
 
-            res.render('homepage', { post });
+            res.render('homepage', {
+                post,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
@@ -86,7 +89,7 @@ router.get('/post/:id', (req, res) => {
             }
             const post = dbPostData.get({ plain: true });
 
-            res.render('single-post', { post });
+            res.render('single-post', { post, loggedIn: req.session.loggedIn });
 
         })
         .catch(err => {
@@ -96,7 +99,12 @@ router.get('/post/:id', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
     res.render('login');
-})
+});
 
 module.exports = router;
