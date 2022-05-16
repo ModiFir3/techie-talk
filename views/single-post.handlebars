@@ -11,16 +11,18 @@
     </div>
 </article>
 
-<form class="">
+{{#if loggedIn}}
+<form class="comment-form">
     <div class="d-flex justify-content-center">
-        <textarea name="" id="" cols="50" rows="3" class=""></textarea>
+        <textarea name="comment-body" id="" cols="50" rows="3" class=""></textarea>
     </div>
     <div class="d-flex justify-content-center">
         <button type="submit">add comment</button>
     </div>
 </form>
+<script src="/javascript/comment.js"></script>
+{{/if}}
 
-
-<div class="container">
+<ol class="container">
     {{> comments post.comments}}
-</div>
+</ol>

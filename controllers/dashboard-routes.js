@@ -16,7 +16,13 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'user_id', 'post_id'],
+                attributes: [
+                    'id',
+                    'comment_text',
+                    'user_id',
+                    'post_id',
+                    'created_at'
+                ],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -29,7 +35,6 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
-            // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('dashboard', { posts, loggedIn: true });
         })

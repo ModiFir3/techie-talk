@@ -8,7 +8,7 @@
             <input type="text" id="post-title" name="post-title" />
         </div>
         <div class="d-flex justify-content-center">
-            <label for="post-content">Link</label>
+            <label for="post-content">content</label>
         </div>
         <div class="d-flex justify-content-center">
             {{!-- remeber this is differnet then the module so fix it to match your js --}}
@@ -24,7 +24,7 @@
 <section>
     <h2>Your Posts</h2>
     <ol>
-        {{#each posts}}
+        {{#each posts as |post|}}
         <li>
             {{> post-info}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
