@@ -12,7 +12,7 @@ router.get('/', withAuth, (req, res) => {
             'id',
             'title',
             'content',
-            'created_at'
+            'created_at',
         ],
         include: [
             {
