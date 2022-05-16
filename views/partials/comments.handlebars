@@ -1,14 +1,16 @@
-{{#each this}}
-<section class="bg-light">
-    <div class="">
+<div>
+    {{#each this}}
+    <section class="bg-light">
         <div class="">
             <div class="">
-                <p>{{user.username}} on {{formate_date created_at}}</p>
-            </div>
-            <div class="">
-                <p>{{comment_text}}</p>
+                <div class="">
+                    <p>{{user.username}} on {{formate_date created_at}}</p>
+                </div>
+                <div class="">
+                    <p>{{comment_text}}</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-{{/each}}
+    </section>
+    {{/each}}
+</div>

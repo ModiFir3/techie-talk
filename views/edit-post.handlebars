@@ -1,0 +1,35 @@
+<article class="container border border-3">
+    <h2 class="d-flex justify-content-center">
+        Edit Post
+    </h2>
+    <form class="edit-post-form">
+        <div class="d-flex justify-content-center">
+            <input name="post-title" type="text" value="{{post.title}}" />
+        </div>
+        <div class="d-flex justify-content-center">
+            by you on {{formate_date post.created_at}}
+            |
+            <a href="/post/{{post.id}}">Comments</a>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info border boarder-dark">Save post</button>
+            <button type="button" class="delete-post-btn btn btn-info border boarder-dark">Delete post</button>
+        </div>
+    </form>
+</article>
+
+<form class="comment-form container">
+    <div class="d-flex justify-content-center">
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-info border boarder-dark">add comment</button>
+    </div>
+</form>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
