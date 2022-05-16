@@ -1,12 +1,14 @@
 {{#each post}}
-<article class="border border-2 rounded m-1">
-    <div class="d-flex gap-1 bg-info">
-        <a href="/post/{{id}}" class="text-decoration-none text-white fs-1">{{title}}</a>
-        <p class="pt-3">by: {{user.username}}</p>
-        <p class="pt-3">{{formate_date created_at}}</p>
-    </div>
-    <div class="">
-        <p class="">{{content}}</p>
-    </div>
-</article>
+<div class="container p-3">
+    <article class="row border border-2 rounded">
+        <div class="d-flex gap-1 bg-info rounded">
+            <a href="/post/{{id}}" class="text-decoration-none text-white fs-1">{{title}}</a>
+            <p class="pt-3">by: {{user.username}}</p>
+            <p class="pt-3">{{formate_date created_at}}</p>
+        </div>
+        <div class="">
+            <p class="">{{content}}</p>
+        </div>
+    </article>
+</div>
 {{/each}}
